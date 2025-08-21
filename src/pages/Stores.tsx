@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { storeAPI, ratingAPI } from '../services/api';
-import { Store } from '../types';
-import StarRating from '../components/StarRating';
+import { type Store } from '../types';
+import StarRating from '../components/Star-rating';
 
 const Stores: React.FC = () => {
   const [stores, setStores] = useState<Store[]>([]);

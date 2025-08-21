@@ -1,5 +1,6 @@
-import { useState, useEffect, createContext, useContext, ReactNode } from 'react';
-import { User } from '../types';
+import { useState, useEffect, createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
+import type { User } from '../types';
 
 interface AuthContextType {
   user: User | null;
@@ -10,7 +11,8 @@ interface AuthContextType {
   isLoading: boolean;
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+// ✅ Use lowercase name to avoid esbuild parsing issues
+const authContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
@@ -48,7 +50,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     localStorage.removeItem('user');
   };
 
-  const value = {
+  const value: AuthContextType = {
     user,
     token,
     login,
@@ -57,11 +59,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     isLoading,
   };
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <authContext.Provider value={value}>
+      {children}
+    </authContext.Provider>
+  );
 };
 
 export const useAuth = () => {
-  const context = useContext(AuthContext);
+  const context = useContext(authContext);
   if (context === undefined) {
     throw new Error('useAuth must be used within an AuthProvider');
   }

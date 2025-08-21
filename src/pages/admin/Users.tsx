@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { adminAPI } from '../../services/api';
-import { UserWithStore } from '../../types';
+import { type UserWithStore } from '../../types';
 
 const AdminUsers: React.FC = () => {
   const [users, setUsers] = useState<UserWithStore[]>([]);

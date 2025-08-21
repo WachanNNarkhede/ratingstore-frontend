@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { storeAPI } from '../services/api';
-import { StoreDetails } from '../types';
-import StarRating from '../components/StarRating';
+import { type StoreDetails } from '../types';
+import StarRating from '../components/Star-rating';
 
 const MyStore: React.FC = () => {
   const [store, setStore] = useState<StoreDetails | null>(null);

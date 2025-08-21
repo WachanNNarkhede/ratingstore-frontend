@@ -13,9 +13,7 @@ const Login: React.FC = () => {
 
   const { login } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation();
 
-  const from = location.state?.from?.pathname || '/';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({

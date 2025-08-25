@@ -123,7 +123,7 @@ const Login: React.FC = () => {
           <div className="mt-6 p-4 bg-gray-100 rounded-md">
             <h3 className="text-sm font-medium text-gray-700 mb-2">Test Accounts:</h3>
             <div className="text-xs text-gray-600 space-y-1">
-              <p><strong>Admin:</strong> admin@storerating.com / Admin123!</p>
+              <p><strong>Admin:</strong> wachannarkhede4@gmail.com / Wachan@123</p>
               <p><strong>Store Owner:</strong> owner1@example.com / Owner123!</p>
               <p><strong>Normal User:</strong> user1@example.com / User123!</p>
             </div>
